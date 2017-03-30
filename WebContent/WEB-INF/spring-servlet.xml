@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        ">
+	<!-- 指定使用注解方式配置,配置自动扫描的包名, base-package指定自己应用中控制器所在的包目录 <context:component-scan/> 
+		扫描指定的包中的类上的注解，常用的注解有： @Controller 声明Action组件 @Service 声明Service组件 @Service("myMovieLister") 
+		@Repository 声明Dao组件 @Component 泛指组件, 当不好归类时. @RequestMapping("/menu") 请求映射 
+		@Resource用于注入，( j2ee提供的 ) 默认按名称装配， @Resource(name="beanName") @Autowired用于注入，(srping提供的) 
+		默认按类型装配 @Transactional(rollbackFor={Exception.class}) 事务管理 @ResponseBody 
+		@Scope("prototype")设定bean的作用域 -->
+	<!-- 扫描注解配置的包 -->
+	<context:component-scan base-package="com.wenyuankeji.spring.controller" />
+	<!-- 默认的注解映射的支持 -->
+
+	<!-- 日期全局转换配置，注册自己实现的DateConverter类2013-10-22 <bean id="conversionService" 
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean"> 
+		<property name="converters"> <list> <bean class="net.spring.common.DateConverter" 
+		/> </list> </property> </bean> -->
+
+	<!-- JSR-303 support will be detected on classpath and enabled automatically -->
+	<mvc:annotation-driven />
+	<!-- 静态资源访问，方案1 -->
+	<mvc:resources location="/images/" mapping="/images/**" />
+	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/editor/" mapping="/editor/**" />
+	<mvc:resources location="/userImg/" mapping="/userImg/**" />
+	<mvc:resources location="/html/" mapping="/html/**" />
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<!-- 配置视图层 使用jstl标签 -->
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<!-- 定义视图前缀格式 -->
+		<property name="prefix" value="/jsp/" />
+		<!-- 定义视图后缀格式 -->
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	<!-- 以下 validator ConversionService 在使用 mvc:annotation-driven 会 自动注册 -->
+	<!-- 默认为 -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+		<!-- 如果不加默认到 使用classpath下的 ValidationMessages.properties -->
+		<!-- 指定出错，validationMessageSource属性：指定国际化错误消息从哪里取， 此处使用之前定义的messageSource来获取国际化消息；如果此处不指定该属性， 
+			则默认到classpath下的ValidationMessages.properties取国际化错误消息， -->
+		<!-- <property name="validationMessageSource" ref="messageSource"/> -->
+	</bean>
+
+	<!-- 定义国际化显示信息2013-10-22 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="basename" value="classpath:message" />
+		<property name="fileEncodings" value="utf-8" />
+		<property name="cacheSeconds" value="120" />
+	</bean>
+	
+	<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8" />
+		<property name="maxUploadSize" value="20242880" />
+		<property name="maxInMemorySize" value="5242880" />
+		<!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常-->  
+        <property name="resolveLazily" value="true"/>
+	</bean>
+	
+	<bean id="exceptionResolver"
+         class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+         <property name="exceptionMappings">
+             <props>
+                 <!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到XXX页面 -->
+                <prop
+                     key="org.springframework.web.multipart.MaxUploadSizeExceededException">uploadError</prop>
+             </props>
+         </property>
+     </bean>
+	
+</beans>

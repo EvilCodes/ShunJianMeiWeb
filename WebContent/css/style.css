@@ -1,0 +1,397 @@
+@charset "utf-8";
+
+/*
+Theme Name: 政府CMS主题   
+Theme URI: 
+Description: 政府CMS主题
+Author:文远科技
+Author URI: 
+Version: 1.0 
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body { /* color: #51504D; */
+	font: 13px Microsoft YaHei, Verdana, Geneva, sans-serif;
+	/* background: #E0B6E3; */
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#FFFFFF, endColorStr=#D1E1F1 ); /*IE 6 7 8*/
+	background: -ms-linear-gradient(top, #FFFFFF, #D1E1F1); /* IE 10 */
+	background: -moz-linear-gradient(top, #FFFFFF, #D1E1F1); /*火狐*/
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#D1E1F1) ); /*谷歌*/
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), o(#D1E1F1) ); /* Safari 4-5, Chrome 1-9*/
+	background: -webkit-linear-gradient(top, #FFFFFF, #D1E1F1);/*Safari5.1 Chrome 10+*/
+	background: -o-linear-gradient(top, #FFFFFF, #D1E1F1); /*Opera 11.10+*/
+}
+
+/*a标签样式*/
+a:link,a:visited {
+	color: #BC303F;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover,a:active {
+	color: #000000;
+	text-decoration: none;
+	outline: none;
+}
+
+img {
+	border: none;
+}
+
+.logo {
+	width: 100%;
+	height: 100px;
+	float: left;
+	margin-left: 20px;
+	/* background: url(images/logo.png);
+	background-size: 316px 60px;
+	background-repeat: no-repeat; */
+}
+
+.main {
+	width: 1000px;
+	height: 800px;
+	margin: 0 auto;
+	background: url(images/bg.png);
+	background-repeat: no-repeat;
+}
+
+/*屏幕*/
+.pingmu {
+	width: 500px;
+	height: 300px;
+	float: left;
+	margin: 0 0 0 100px;
+	background: url(images/pingmu.png);
+	background-size: 500px 300px;
+	background-repeat: no-repeat;
+}
+
+/*常见问题*/
+.changjianwenti {
+	width: 292px;
+	height: 298px;
+	float: left;
+	margin: 0 0 0 10px;
+	background: url(images/changjianwenti.png);
+	background-size: 292px 298px;
+	background-repeat: no-repeat;
+}
+
+/*常见问题*/
+.changjianwenti_2 {
+	width: 292px;
+	height: 298px;
+	float: left;
+	margin: 0 0 0 10px;
+	display:none;
+}
+
+/*结婚流程*/
+.jiehunliucheng {
+	width: 1000px;
+	height: 928px;
+	margin: 0 auto;
+	background: url(images/jiehunliucheng.png);
+	background-size: 1000px 928px;
+	background-repeat: no-repeat;
+}
+
+/*在台团聚流程*/
+.tuanjvliucheng {
+	width: 1000px;
+	height: 928px;
+	margin: 0 auto;
+	background: url(images/tuanjvliucheng.png);
+	background-size: 1000px 928px;
+	background-repeat: no-repeat;
+}
+
+/*在台依亲流程*/
+.yiqinliucheng {
+	width: 1000px;
+	height: 830px;
+	margin: 0 auto;
+	background: url(images/yiqinliucheng.png);
+	background-size: 1000px 830px;
+	background-repeat: no-repeat;
+}
+
+/*长期居留流程*/
+.changqiliucheng {
+	width: 1000px;
+	height: 830px;
+	margin: 0 auto;
+	background: url(images/changqiliucheng.png);
+	background-size: 1000px 830px;
+	background-repeat: no-repeat;
+}
+
+/*定居流程*/
+.dingjvliucheng {
+	width: 1000px;
+	height: 928px;
+	margin: 0 auto;
+	background: url(images/dingjvliucheng.png);
+	background-size: 1000px 928px;
+	background-repeat: no-repeat;
+}
+
+/*探亲流程*/
+.tanqinliucheng {
+	width: 1000px;
+	height: 1703px;
+	margin: 0 auto;
+	background: url(images/tanqinliucheng.png);
+	background-size: 1000px 1703px;
+	background-repeat: no-repeat;
+}
+
+/*离婚流程*/
+.lihunliucheng {
+	width: 1000px;
+	height: 928px;
+	margin: 0 auto;
+	background: url(images/lihunliucheng.png);
+	background-size: 1000px 928px;
+	background-repeat: no-repeat;
+}
+
+.lihunliucheng_1 {
+	width: 1000px;
+	height: 1927px;
+	margin: 0 auto;
+	background: url(images/lihunliucheng_2.png);
+	background-size: 1000px 1927px;
+	background-repeat: no-repeat;
+}
+
+.lihunliucheng_2 {
+	width: 1000px;
+	height: 1927px;
+	margin: 0 auto;
+	background: url(images/lihunliucheng_3.png);
+	background-size: 1000px 1927px;
+	background-repeat: no-repeat;
+}
+
+.lihunliucheng_3 {
+	width: 1000px;
+	height: 2920px;
+	margin: 0 auto;
+	background: url(images/lihunliucheng_4.png);
+	background-size: 1000px 2920px;
+	background-repeat: no-repeat;
+}
+
+.lihunliucheng_4 {
+	width: 1000px;
+	height: 2920px;
+	margin: 0 auto;
+	background: url(images/lihunliucheng_5.png);
+	background-size: 1000px 2920px;
+	background-repeat: no-repeat;
+}
+
+.lihunliucheng_5 {
+	width: 1000px;
+	height: 2920px;
+	margin: 0 auto;
+	background: url(images/lihunliucheng_6.png);
+	background-size: 1000px 2920px;
+	background-repeat: no-repeat;
+}
+
+/*其他流程*/
+.qitaliucheng {
+	width: 1000px;
+	height: 871px;
+	margin: 0 auto;
+	background: url(images/qitaliucheng.png);
+	background-size: 1000px 871px;
+	background-repeat: no-repeat;
+}
+
+.qitaliucheng_1{
+	width: 1000px;
+	height: 3183px;
+	margin: 0 auto;
+	background: url(images/qitaliucheng_2.png);
+	background-size: 1000px 3183px;
+	background-repeat: no-repeat;
+}
+
+.qitaliucheng_2{
+	width: 1000px;
+	height: 2487px;
+	margin: 0 auto;
+	background: url(images/qitaliucheng_3.png);
+	background-size: 1000px 2487px;
+	background-repeat: no-repeat;
+}
+
+.qitaliucheng_3{
+	width: 1000px;
+	height: 1645px;
+	margin: 0 auto;
+	background: url(images/qitaliucheng_4.png);
+	background-size: 1000px 1645px;
+	background-repeat: no-repeat;
+}
+
+.qitaliucheng_4{
+	width: 1000px;
+	height: 1237px;
+	margin: 0 auto;
+	background: url(images/qitaliucheng_5.png);
+	background-size: 1000px 1237px;
+	background-repeat: no-repeat;
+}
+
+/*提问页面背景*/
+.question_bg {
+	width: 1000px;
+	height: 880px;
+	margin: 0 auto;
+	background: url(images/question_bg.png);
+	background-size: 1000px 880px;
+	background-repeat: no-repeat;
+}
+
+/*提问详细页面背景*/
+.question_detail_bg {
+	width: 1000px;
+	height: 800px;
+	margin: 0 auto;
+	background: url(images/question_detail_bg.png);
+	background-size: 1000px 880px;
+	background-repeat: no-repeat;
+}
+
+/*人物1*/
+.person_1 {
+	width: 120px;
+	height: 80px;
+	float: left;
+	margin: 20px 0 0 300px;
+	background: url(images/person_1.png);
+	background-repeat: no-repeat;
+}
+
+/*人物2*/
+.person_2 {
+	width: 120px;
+	height: 80px;
+	float: left;
+	margin: 20px 0 0 50px;
+	background: url(images/person_2.png);
+	background-repeat: no-repeat;
+}
+
+/*人物3*/
+.person_3 {
+	width: 120px;
+	height: 80px;
+	float: left;
+	margin: 20px 0 0 50px;
+	background: url(images/person_3.png);
+	background-repeat: no-repeat;
+}
+
+/*咨询台*/
+.zixuntai {
+	width: 520px;
+	height: 99px;
+	float: left;
+	margin: 0 0 0 250px;
+	background: url(images/zixuntai.png);
+	background-repeat: no-repeat;
+}
+
+/*红娘1*/
+.hongniang_1 {
+	width: 100px;
+	height: 142px;
+	float: left;
+	margin: -240px 0 0 5px;
+	background: url(images/hongniangnew.gif);
+	background-size: 100px 142px;
+	background-repeat: no-repeat;
+}
+
+/*红娘2*/
+.hongniang_2 {
+	width: 82px;
+	height: 142px;
+	float: right;
+	margin: -200px 10px 0 0px;
+	background: url(images/hongniang_2.png);
+	background-size: 82px 142px;
+	background-repeat: no-repeat;
+}
+
+/*彩带1background: url(images/caidai_1.png);*/
+.caidai_1 {
+	width: 250px;
+	height: 85px;
+	float: left;
+	margin: -90px 0 0 0px;
+	
+	background-size: 250px 85px;
+	background-repeat: no-repeat;
+}
+
+/*彩带2background: url(images/caidai_2.png);*/
+.caidai_2 {
+	width: 200px;
+	height: 99px;
+	float: right;
+	margin: -60px 0 0 20px;
+	
+	background-size: 200px 99px;
+	background-repeat: no-repeat;
+}
+
+/*气泡1*/
+.qipao_1 {
+	width: 170px;
+	height: 60px;
+	float: left;
+	margin: -240px 0 0 250px;
+	background: url(images/qipao.png);
+	background-size: 170px 60px;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+/*气泡2*/
+.qipao_2 {
+	width: 170px;
+	height: 60px;
+	float: left;
+	margin: -240px 0 0 420px;
+	background: url(images/qipao.png);
+	background-size: 170px 60px;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+/*气泡3*/
+.qipao_3 {
+	width: 170px;
+	height: 60px;
+	float: left;
+	margin: -240px 0 0 590px;
+	background: url(images/qipao.png);
+	background-size: 170px 60px;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+.clear {
+	clear: both;
+}
